@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ContactUs">
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:src="@drawable/campus"
+                            android:scaleType="fitXY"
+                            android:layout_height="200dp"></ImageView>
+                        <android.support.design.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="11dp"
+                            android:elevation="5dp"
+                            app:cardCornerRadius="11dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Address"
+                                            android:layout_margin="15dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="18sp"></TextView>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="15dp"
+                                            android:layout_marginRight="15dp"
+                                            android:layout_marginBottom="15dp"
+                                            android:id="@+id/txt_address"
+                                            android:textSize="16sp"></TextView>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_marginTop="11dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent">
+                                                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                                                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                                                    xmlns:tools="http://schemas.android.com/tools"
+                                                    android:id="@+id/map"
+                                                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    tools:context=".Activity.ContactUs" />
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:text="FOLLOW US"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:paddingTop="11dp"
+                                            android:textColor="@android:color/black"
+                                            android:textStyle="bold"
+                                            android:textSize="18sp"></TextView>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="15dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="30dp"
+                                                    android:layout_marginRight="22dp"
+                                                    android:id="@+id/img_fb"
+                                                    android:onClick="Button_fb"
+                                                    android:src="@drawable/ic_facebook"
+                                                    android:layout_height="30dp"
+                                                    ></ImageView>
+                                                <ImageView
+                                                    android:layout_width="30dp"
+                                                    android:layout_marginLeft="22dp"
+                                                    android:id="@+id/img_insta"
+                                                    android:onClick="Button_insta"
+                                                    android:src="@drawable/ic_instagram"
+                                                    android:layout_height="30dp"
+                                                    ></ImageView>
+
+                                        </LinearLayout>
+                                </LinearLayout>
+
+                        </android.support.design.card.MaterialCardView>
+                </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

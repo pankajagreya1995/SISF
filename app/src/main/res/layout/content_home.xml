@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Home">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+             />
+    </RelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="11dp"
+                android:elevation="5dp"
+                android:padding="11dp"
+                app:cardCornerRadius="11dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/amiri"
+                        android:text="Srajan International\n School of Finance"
+                        android:textSize="26sp"></TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="About SISF"
+                        android:textSize="20sp"></TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:justificationMode="inter_word"
+                        android:fontFamily="sans-serif"
+                        android:text="SISF is a change, a betterment for all accounting personnel who are looking forward to not only go global but actually Grow Global. With unique methodologies and rigorous training programmes, SISF is considered to be a unique civilization for finance and accounting professionals."
+                        android:textSize="16sp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="About Srajan"
+                        android:layout_marginTop="22dp"
+                        android:textSize="20sp"></TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:text="'SRAJAN’, means , the creator,   an idea of creating leaders.  Founded in 1999, with Mr.Manish Kapoor’s sacrifices, determination and immense hard work in the past 2 decades, starting from 4 students has today created 50,000+ domestically and 100+ globally successful leaders. With the vision of going global, Srajan has made an outstanding approach to deliver best in class international education in finance to individuals in Udaipur. This vision serves as a fundamental pillar in the making of SISF
+"
+                        android:justificationMode="inter_word"
+                        android:fontFamily="sans-serif"
+                        android:textSize="16sp"></TextView>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:text="FOLLOW US"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="22dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="20sp"></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                      <ImageView
+                          android:layout_width="30dp"
+                          android:layout_marginRight="22dp"
+                          android:id="@+id/img_fb"
+                          android:onClick="Button_fb"
+                          android:src="@drawable/ic_facebook"
+                          android:layout_height="30dp"></ImageView>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_marginLeft="22dp"
+                            android:id="@+id/img_insta"
+                            android:onClick="Button_insta"
+                            android:src="@drawable/ic_instagram"
+                            android:layout_height="30dp"></ImageView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>
+

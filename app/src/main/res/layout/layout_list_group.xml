@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="11dp"
+        android:layout_margin="11dp"
+        app:strokeColor="@color/black_overlay"
+        app:cardElevation="11dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/listTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:paddingLeft="11dp"
+            android:paddingBottom="11dp"
+            android:paddingRight="11dp"
+            android:text="Agreya"
+            android:paddingTop="11dp"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            />
+    </android.support.design.card.MaterialCardView>
+
+</LinearLayout>
