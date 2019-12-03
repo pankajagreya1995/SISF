@@ -74,6 +74,54 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_passwordl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    app:errorEnabled="true"
+                    app:passwordToggleContentDescription="show"
+                    app:passwordToggleDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorAccent">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/desc_field_selector"
+                        android:gravity="bottom"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="11dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    app:passwordToggleContentDescription="show"
+                    app:passwordToggleDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorAccent"
+                    android:id="@+id/txt_passwordcl"
+                    android:layout_margin="11dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_passwordc"
+                        android:layout_gravity="bottom"
+                        android:gravity="bottom"
+                        android:background="@drawable/desc_field_selector"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:padding="11dp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     app:errorEnabled="true"
                     android:id="@+id/txt_agel"
