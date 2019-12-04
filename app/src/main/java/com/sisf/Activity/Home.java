@@ -91,12 +91,15 @@ public class Home extends AppCompatActivity {
                     case R.id.nav_faq:
                         startActivity(new Intent(Home.this,FAQ.class));
                         Toast.makeText(Home.this, "FAQ",Toast.LENGTH_SHORT).show();break;
+                    case R.id.nav_quiz:
+                        startActivity(new Intent(Home.this,Home_Quiz.class));
+                        Toast.makeText(Home.this, "Quiz",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_contactus:
                         startActivity(new Intent(Home.this,ContactUs.class));
                         Toast.makeText(Home.this, "Contactus",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_register:
-                        startActivity(new Intent(Home.this,Register.class));
-                        Toast.makeText(Home.this, "Contactus",Toast.LENGTH_SHORT).show();break;
+                    case R.id.nav_login:
+                        startActivity(new Intent(Home.this,Login.class));
+                        Toast.makeText(Home.this, "Login",Toast.LENGTH_SHORT).show();break;
                     default:
                         return true;
                 }

@@ -8,8 +8,10 @@ import android.widget.TextView;
 import com.sisf.R;
 
 public class Course extends AppCompatActivity {
+
     TextView tv_des;
     ImageView background_img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,14 @@ public class Course extends AppCompatActivity {
         int get_course_type=getIntent().getIntExtra("Select_course_type",0);
 
         tv_des=findViewById(R.id.txt_description);
+
         background_img=findViewById(R.id.img);
+
+        Set_info(get_course_type);
+
+    }
+
+    private void Set_info(int get_course_type) {
         if (get_course_type==0)
         {
             background_img.setImageDrawable(getResources().getDrawable(R.drawable.img_acc));
@@ -78,10 +87,6 @@ public class Course extends AppCompatActivity {
                     "We provide regular guidance and support for all your NCFM by NSE certification modules. The certification is divided into 3 different modules, a beginner module, an intermediate module and an advance module.\n" +
                     "The programme was designed keeping in mind all aspects that can benefit our students in the real world. In today’s competitive epidemic the more knowledge you carry, the more you are valued. This programme of SISF justifies with this ideology and is keen to train the students to overcome all obstacles faced in this world of finance and accounting.");
         }
-
-
-
-
     }
 
     @Override

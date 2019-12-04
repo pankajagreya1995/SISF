@@ -68,7 +68,6 @@ public class Register extends AppCompatActivity {
     @BindView(R.id.mobile) TextInputEditText ed_mobile;
     @BindView(R.id.rb_male)  RadioButton btn_male;
     @BindView(R.id.rb_female)  RadioButton btn_female;
-    private static final String SERVER_URL = "http://www.sisfeducation.com";
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
 
@@ -77,6 +76,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+
         spinner=findViewById(R.id.sp_course);
         spinner_class=findViewById(R.id.sp_class);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -213,7 +213,7 @@ public class Register extends AppCompatActivity {
         }
     }
 
-    private static Account getAccount(AccountManager accountManager) {
+   /* private static Account getAccount(AccountManager accountManager) {
         Account[] accounts = accountManager.getAccounts();
     //    Account[] accounts = accountManager.getAccountsByType("com.google");
         Account account;
@@ -223,7 +223,7 @@ public class Register extends AppCompatActivity {
             account = null;
         }
         return account;
-    }
+    }*/
 
     public boolean Validation()
     {

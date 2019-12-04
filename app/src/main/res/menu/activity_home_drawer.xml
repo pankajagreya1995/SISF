@@ -27,9 +27,13 @@
             android:icon="@drawable/ic_contact"
             android:title="Contact Us" />
         <item
-            android:id="@+id/nav_register"
+            android:id="@+id/nav_login"
             android:icon="@drawable/ic_note"
-            android:title="REGISTER" />
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_note"
+            android:title="Quizzes" />
     </group>
 
 

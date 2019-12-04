@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Result_Screen">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
+        android:layout_margin="22dp"
+        android:indeterminateDuration="100"
+        android:max="100"
+        android:progress="20"
+        android:secondaryProgress="@android:integer/config_shortAnimTime"
+        android:textAlignment="center"
+        android:textDirection="anyRtl"
+        android:tooltipText="40"></ProgressBar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/amiri"
+        android:paddingLeft="22sp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="11dp"
+        android:textColor="@android:color/black"
+        android:text="Total Question:30"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/amiri"
+        android:paddingLeft="22sp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="11dp"
+        android:textColor="@android:color/black"
+        android:text="Right Question: 15"
+        android:layout_height="wrap_content"></TextView>
+
+</LinearLayout>
