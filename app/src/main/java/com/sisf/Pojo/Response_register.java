@@ -1,4 +1,4 @@
-package com.sisf.Utils;
+package com.sisf.Pojo;
 
 import com.google.gson.annotations.SerializedName;
 

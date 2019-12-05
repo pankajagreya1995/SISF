@@ -30,4 +30,13 @@
      SISF operates with a sole objective of implementing unique methodology of learning and recreating personalities with the skill sets that are desired by industry leaders in the field of financial services and accounting. Our motive is to provide valued learning to our students to help them stand out as soon as they step in the global arena.</string>
     <string name="title_activity_map">Map</string>
     <string name="submit_otp_txt">Verify</string>
+
+   <!-- when error on net connection-->
+    <string name="toast_no_internet">No Internet Connection...</string>
+
+    <!--when any error on Api calling time-->
+    <string name="toast_please_retry">Please Retry...</string>
+
+    <!--when any error on response get time-->
+    <string name="toast_something_wentrong">Something went wrong...</string>
 </resources>
