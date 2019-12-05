@@ -19,6 +19,7 @@ import com.sisf.Pojo.Response_register;
 import com.sisf.R;
 import com.sisf.Utils.APIClient;
 import com.sisf.Utils.APIInterface;
+import com.sisf.Utils.App_Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +30,8 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.sisf.Utils.App_Utils.Chapter_List_Info;
 
 public class Home_Quiz extends AppCompatActivity {
 
@@ -69,13 +72,18 @@ public class Home_Quiz extends AppCompatActivity {
                             boolean status=response.body().getStatus();
                             if (status)
                             {
-                                List<Cons_quiz_home> list=new ArrayList<>();
+                                Chapter_List_Info=new ArrayList<>();
+                                Chapter_List_Info.clear();
                                 for (int i=0;i<response.body().getResponce().size();i++)
                                 {
-                                    list.add(new Cons_quiz_home(response.body().getResponce().get(i).getId(),response.body().getResponce().get(i).getName(),response.body().getResponce().get(i).getId()));
+                                    Chapter_List_Info.add(new Cons_quiz_home(response.body().getResponce().get(i).getId(),
+                                            response.body().getResponce().get(i).getName(),
+                                            response.body().getResponce().get(i).getDescription(),
+                                            response.body().getResponce().get(i).getNo_of_question(),
+                                            response.body().getResponce().get(i).gettiming()));
                                 }
 
-                                Adapter_home_quiz adapter = new Adapter_home_quiz(list,Home_Quiz.this);
+                                Adapter_home_quiz adapter = new Adapter_home_quiz(Chapter_List_Info,Home_Quiz.this);
                                 recyclerView.setAdapter(adapter);
 
                             }else{

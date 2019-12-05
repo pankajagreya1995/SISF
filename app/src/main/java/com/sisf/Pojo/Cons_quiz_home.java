@@ -1,12 +1,14 @@
 package com.sisf.Pojo;
 
 public class Cons_quiz_home {
-    String id,name,Que_size;
+    String id,name,description,no_of_question,timing;
 
-    public Cons_quiz_home(String id, String name, String que_size) {
+    public Cons_quiz_home(String id, String name, String description, String no_of_question, String timing) {
         this.id = id;
         this.name = name;
-        Que_size = que_size;
+        this.description = description;
+        this.no_of_question = no_of_question;
+        this.timing = timing;
     }
 
     public String getId() {
@@ -25,11 +27,27 @@ public class Cons_quiz_home {
         this.name = name;
     }
 
-    public String getQue_size() {
-        return Que_size;
+    public String getDescription() {
+        return description;
     }
 
-    public void setQue_size(String que_size) {
-        Que_size = que_size;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getNo_of_question() {
+        return no_of_question;
+    }
+
+    public void setNo_of_question(String no_of_question) {
+        this.no_of_question = no_of_question;
+    }
+
+    public String getTiming() {
+        return timing;
+    }
+
+    public void setTiming(String timing) {
+        this.timing = timing;
     }
 }

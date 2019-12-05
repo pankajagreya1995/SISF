@@ -22,6 +22,10 @@ public interface APIInterface {
     Call<Response_register> register(@FieldMap HashMap<String, String> data);
 
     @FormUrlEncoded
+    @POST("app/api/submitAnswers")
+    Call<Response_register> SubmitAnswer(@FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
     @POST("app/api/login")
     Call<Response_login> login(@FieldMap HashMap<String, String> data);
 

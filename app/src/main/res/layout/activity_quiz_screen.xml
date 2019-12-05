@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.Quiz_screen">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -27,10 +28,12 @@
             android:fontFamily="@font/amiri"
             android:paddingLeft="22sp"
             android:layout_marginTop="11dp"
+            android:id="@+id/txt_timer"
             android:layout_marginRight="11dp"
             android:textColor="@android:color/black"
             android:text="Timer: 60/2000"
             android:layout_height="wrap_content"></TextView>
+
     </LinearLayout>
 
     <TextView
@@ -50,27 +53,30 @@
         android:id="@+id/options_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="22dp"
+        android:layout_margin="11dp"
         android:layout_weight="1"
+        android:choiceMode="singleChoice"
+       android:nestedScrollingEnabled="false"
+        android:listSelector="@drawable/list_item_selector"
         android:divider="@android:color/white"
         android:dividerHeight="11dp"
         ></ListView>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_height="111dp">
         <TextView
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:layout_marginTop="11dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginRight="6dp"
             android:fontFamily="monospace"
             android:padding="5dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/btn_prev"
             android:onClick="button_prev"
+            android:layout_margin="11dp"
             android:visibility="gone"
             android:textStyle="bold"
             android:layout_weight="1"
@@ -81,11 +87,9 @@
         <TextView
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:layout_marginTop="11dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="33dp"
             android:fontFamily="monospace"
             android:padding="5dp"
+            android:layout_margin="11dp"
             android:id="@+id/btn_next"
             android:background="@drawable/button_background"
             android:textColor="@android:color/white"

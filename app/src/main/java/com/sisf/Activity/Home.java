@@ -204,9 +204,7 @@ public class Home extends AppCompatActivity {
                     startActivity(new Intent(Home.this, Course.class).putExtra("Select_course_type", Select_course_type));
                     spinner.setSelection(0);
                 }
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }

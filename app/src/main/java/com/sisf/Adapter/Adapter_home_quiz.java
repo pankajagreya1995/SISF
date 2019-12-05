@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.sisf.Activity.Chapter_Info;
 import com.sisf.Activity.Quiz_screen;
 import com.sisf.Pojo.Cons_quiz_home;
 import com.sisf.R;
@@ -41,7 +42,10 @@ public class Adapter_home_quiz extends RecyclerView.Adapter<Adapter_home_quiz.Vi
         viewHolder.main_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context, Quiz_screen.class).putExtra("position",list_chapter.get(i).getId()).putExtra("name",list_chapter.get(i).getName()));
+                context.startActivity(new Intent(context, Chapter_Info.class).
+                        putExtra("item_position",i).
+                        putExtra("position",list_chapter.get(i).getId()).
+                        putExtra("name",list_chapter.get(i).getName()));
             }
         });
     }

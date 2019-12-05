@@ -16,11 +16,7 @@ public class Result_Screen extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Show Result");
-        ProgressBar progressBar=findViewById(R.id.progressbar);
-        progressBar.setProgress(45);
-        progressBar.setMinimumWidth(55);
-        progressBar.setIndeterminate(true);
-        progressBar.setHasTransientState(true);
+
 
     }
 

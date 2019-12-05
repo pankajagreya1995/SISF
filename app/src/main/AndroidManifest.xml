@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
@@ -19,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Result_Screen"></activity>
+        <activity android:name=".Activity.Chapter_Info"></activity>
+        <activity android:name=".Activity.Result_Screen" />
         <activity android:name=".Activity.Quiz_screen" />
         <activity
             android:name=".Activity.Home_Quiz"

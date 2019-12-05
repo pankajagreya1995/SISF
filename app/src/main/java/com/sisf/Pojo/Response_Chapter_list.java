@@ -23,8 +23,8 @@ public class Response_Chapter_list {
         @SerializedName("description")
         public String description;
 
-        @SerializedName("timeing")
-        public String timeing;
+        @SerializedName("timing")
+        public String timing;
 
         @SerializedName("no_of_question")
         public String no_of_question;
@@ -53,12 +53,12 @@ public class Response_Chapter_list {
             this.description = description;
         }
 
-        public String getTimeing() {
-            return timeing;
+        public String gettiming() {
+            return timing;
         }
 
-        public void setTimeing(String timeing) {
-            this.timeing = timeing;
+        public void settiming(String timing) {
+            this.timing = timing;
         }
 
         public String getNo_of_question() {
