@@ -156,7 +156,7 @@ public class Register extends AppCompatActivity {
                             boolean status=response.body().getStatus();
                             if (status)
                             {
-                                Toast.makeText(Register.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                     //           Toast.makeText(Register.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 img_successfull.setVisibility(View.VISIBLE);
                                 Handler handler=new Handler();
                                 Runnable runnable=new Runnable() {
@@ -173,7 +173,7 @@ public class Register extends AppCompatActivity {
 
                         }else
                         {
-                            Toast.makeText(Register.this, getResources().getString(R.string.toast_please_retry), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, getResources().getString(R.string.toast_something_wentrong), Toast.LENGTH_SHORT).show();
                         }
                     }
 

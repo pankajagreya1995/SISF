@@ -47,9 +47,11 @@
             android:foregroundGravity="center"
             android:gravity="center"
             android:paddingLeft="22sp"
-            android:text="10%"
+            android:text="100%"
             android:textColor="@android:color/black"
-            android:textSize="30sp"></TextView>
+            android:textSize="23sp"></TextView>
+
+
     </RelativeLayout>
 
 

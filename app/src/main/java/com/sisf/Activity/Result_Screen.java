@@ -38,6 +38,7 @@ public class Result_Screen extends AppCompatActivity {
     int pStatus = 0;
     private Handler handler = new Handler();
     String percentage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,17 +50,21 @@ public class Result_Screen extends AppCompatActivity {
 
         try{
             String total_right=getIntent().getExtras().getString("total_right");
-            ed_result_right_que.setText("Total right question: "+total_right+" Que.");
+            ed_result_right_que.setText("Total Right Questions: "+total_right+" Que.");
             String chapter_name=getIntent().getExtras().getString("chapter_name");
             ed_result_name.setText(chapter_name);
+
             String total_question=getIntent().getExtras().getString("total_question");
-            ed_result_total_que.setText("Total Question: "+total_question+" Que.");
+            ed_result_total_que.setText("Total Questions: "+total_question+" Que.");
+
             String total_attempts=getIntent().getExtras().getString("total_attempts");
-            ed_total_attemp.setText("Total attemp question: "+total_attempts+" Que.");
+            ed_total_attemp.setText("Total Attempted Questions: "+total_attempts+" Que.");
+
             percentage=getIntent().getExtras().getString("percentage");
             ed_result_per.setText(percentage+"%");
 
         }catch (Exception e){e.printStackTrace();}
+
 
         Resources res = getResources();
         Drawable drawable = res.getDrawable(R.drawable.circular);

@@ -39,8 +39,8 @@ public class Chapter_Info extends AppCompatActivity {
         item_position=getIntent().getExtras().getInt("item_position");
         getSupportActionBar().setTitle(Chapt_name);
         ed_desc.setText(App_Utils.Chapter_List_Info.get(item_position).getDescription());
-        ed_question_size.setText("Questions: "+App_Utils.Chapter_List_Info.get(item_position).getNo_of_question());
-        ed_timer.setText("Timing: "+App_Utils.Chapter_List_Info.get(item_position).getTiming());
+        ed_question_size.setText("Total no of questions: "+App_Utils.Chapter_List_Info.get(item_position).getNo_of_question());
+        ed_timer.setText("Time: "+App_Utils.Chapter_List_Info.get(item_position).getTiming());
 
     }
 

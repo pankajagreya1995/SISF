@@ -2,11 +2,10 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/secondaryProgress">
         <shape
-            android:innerRadiusRatio="6"
+            android:innerRadiusRatio="6.5"
             android:shape="ring"
-            android:thicknessRatio="7.0"
+            android:thicknessRatio="5.0"
             android:useLevel="true">
-
 
             <gradient
                 android:centerColor="#999999"
@@ -26,7 +25,7 @@
             <shape
                 android:innerRadiusRatio="6"
                 android:shape="ring"
-                android:thicknessRatio="8.0"
+                android:thicknessRatio="6.0"
                 android:useLevel="true">
 
 

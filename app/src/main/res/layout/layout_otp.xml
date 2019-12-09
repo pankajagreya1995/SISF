@@ -84,6 +84,19 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="88dp"
+            android:paddingRight="88dp"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:id="@+id/txt_error"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_height="wrap_content"></TextView>
 
         <TextView
             android:layout_width="match_parent"

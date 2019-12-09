@@ -51,6 +51,7 @@ public class Login extends AppCompatActivity {
         return true;
     }
 
+
     //On click Forgot button
     public void Forgot_button(View view) {
         startActivity(new Intent(Login.this,Forgot_pwd.class));

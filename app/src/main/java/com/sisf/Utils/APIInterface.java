@@ -2,6 +2,7 @@ package com.sisf.Utils;
 
 import com.sisf.Pojo.Response_Chapter_list;
 import com.sisf.Pojo.Response_Question;
+import com.sisf.Pojo.Response_forgot_pwd;
 import com.sisf.Pojo.Response_login;
 import com.sisf.Pojo.Response_register;
 
@@ -18,7 +19,15 @@ public interface APIInterface {
     //This method is used for "POST"
 
     @FormUrlEncoded
-    @POST("app/api/register")
+    @POST("app/api/forgotPassword")
+    Call<Response_forgot_pwd> forget_password(@FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
+    @POST("app/api/changePassword")
+    Call<Response_forgot_pwd> change_password(@FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
+    @POST("app/api/registerStudent")
     Call<Response_register> register(@FieldMap HashMap<String, String> data);
 
     @FormUrlEncoded

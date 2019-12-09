@@ -55,6 +55,11 @@ public class Home extends AppCompatActivity {
             R.drawable.slider_3,
             R.drawable.slider_1,
             R.drawable.slider_2,
+            R.drawable.slider_3,R.drawable.slider_1,
+            R.drawable.slider_2,
+            R.drawable.slider_3,
+            R.drawable.slider_1,
+            R.drawable.slider_2,
             R.drawable.slider_3};
 
     boolean Select_course = false;
@@ -62,7 +67,7 @@ public class Home extends AppCompatActivity {
     Spinner spinner;
     TextView header_name;
     NavigationView navigationView;
-
+    Timer swipeTimer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +104,7 @@ public class Home extends AppCompatActivity {
                 switch (id) {
                     case R.id.nav_story:
                         startActivity(new Intent(Home.this, Story.class));
-                        Toast.makeText(Home.this, "Our Story", Toast.LENGTH_SHORT).show();
+                  //      Toast.makeText(Home.this, "Our Story", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_course:
                         //  startActivity(new Intent(Home.this,Course.class).putExtra("Select_course_type",Select_course_type));
@@ -107,7 +112,7 @@ public class Home extends AppCompatActivity {
                         break;
                     case R.id.nav_roots:
                         startActivity(new Intent(Home.this, Roots.class));
-                        Toast.makeText(Home.this, "Roots", Toast.LENGTH_SHORT).show();
+                   //     Toast.makeText(Home.this, "Roots", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_faq:
                         startActivity(new Intent(Home.this, FAQ.class));
@@ -116,9 +121,10 @@ public class Home extends AppCompatActivity {
                     case R.id.nav_quiz:
                         if (App_Controller.SharedPre_getDefaults(App_Utils.USER_NAME, Home.this) != null) {
                             startActivity(new Intent(Home.this, Home_Quiz.class));
-                            Toast.makeText(Home.this, "Quiz", Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(Home.this, "Quiz", Toast.LENGTH_SHORT).show();
                             break;
                         } else {
+                            swipeTimer.cancel();
                             startActivity(new Intent(Home.this, Login.class));
                             Toast.makeText(Home.this, "Please login", Toast.LENGTH_SHORT).show();
                             break;
@@ -131,8 +137,9 @@ public class Home extends AppCompatActivity {
                         Show_logout_Dialog();
                         break;
                     case R.id.nav_login:
+                        swipeTimer.cancel();
                         startActivity(new Intent(Home.this, Login.class));
-                        Toast.makeText(Home.this, "Login", Toast.LENGTH_SHORT).show();
+                    //    Toast.makeText(Home.this, "Login", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         return true;
@@ -252,23 +259,24 @@ public class Home extends AppCompatActivity {
             public void run() {
                 if (currentPage == IMAGES.length) {
                     currentPage = 0;
-                }
-                if (currentPage == 0) {
-                    currentPage = currentPage + 1;
+                }if (currentPage == 0) {
                     mPager.setCurrentItem(currentPage, false);
-                } else {
                     currentPage = currentPage + 1;
+                } else {
                     mPager.setCurrentItem(currentPage, true);
+                    currentPage = currentPage + 1;
                 }
             }
         };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 2000, 3000);
+
+            swipeTimer = new Timer();
+            //Start new Timer
+            swipeTimer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    handler.post(Update);
+                }
+            }, 2000, 3000);
 
     }
 
@@ -281,6 +289,7 @@ public class Home extends AppCompatActivity {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/sisfeducation"));
         startActivity(browserIntent);
     }
+
 
 
     @Override

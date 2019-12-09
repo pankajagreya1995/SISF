@@ -21,12 +21,13 @@
                 android:scaleType="fitXY"
                 android:id="@+id/imageView"
                 android:layout_height="350dp"></ImageView>
+
             <android.support.design.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="11dp"
-                android:elevation="5dp"
-                android:padding="11dp"
+                android:elevation="11dp"
+                android:padding="15dp"
                 app:cardCornerRadius="11dp">
 
                 <LinearLayout
@@ -39,7 +40,44 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="11dp"
-                        android:justificationMode="inter_word"
+                        android:id="@+id/txt_title"
+                        android:textStyle="bold"
+                        android:text="Qualifications:"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:fontFamily="sans-serif"
+                        android:textSize="18sp"></TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:id="@+id/txt_title_desc"
+                        android:text="Company Secretary, Masters of Business Administration (Finance), Masters of Commerce, Certified Management Accountant."
+                        android:fontFamily="sans-serif"
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="11dp"
+                android:elevation="5dp"
+                android:padding="15dp"
+                app:cardCornerRadius="11dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
                         android:id="@+id/txt_desc"
                         android:fontFamily="sans-serif"
                         android:text="@string/home_des"

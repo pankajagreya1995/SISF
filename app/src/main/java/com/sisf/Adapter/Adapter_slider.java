@@ -19,7 +19,6 @@ public class Adapter_slider extends PagerAdapter {
     private LayoutInflater inflater;
     private Context context;
 
-
     public Adapter_slider(Context context,ArrayList<Integer> IMAGES) {
         this.context = context;
         this.IMAGES=IMAGES;

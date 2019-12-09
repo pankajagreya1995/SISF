@@ -322,40 +322,46 @@ public class Quiz_screen extends AppCompatActivity {
 
 
     private void Call_Submit_Result_Api(final HashMap<String, String> api_map) {
-        App_Controller.Progressbar_Show(Quiz_screen.this);
-        APIInterface apiService = APIClient.getClient().create(APIInterface.class);
-        Call<Response_register> call = apiService.SubmitAnswer(api_map);
-        call.enqueue(new Callback<Response_register>() {
-            @Override
-            public void onResponse(Call<Response_register> call, Response<Response_register> response) {
-                App_Controller.Progressbar_Dismiss();
-                if (response.body() != null) {
-                    boolean status = response.body().getStatus();
-                    if (status) {
-                        Toast.makeText(Quiz_screen.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Quiz_screen.this, Result_Screen.class);
-                        intent.putExtra("total_right", "" + api_map.get("total_right"));
-                        intent.putExtra("chapter_name", "" + Chapt_name);
-                        intent.putExtra("total_question", "" + api_map.get("total_question"));
-                        intent.putExtra("total_attempts", "" + api_map.get("total_attempts"));
-                        intent.putExtra("percentage", "" + api_map.get("percentage"));
-                        intent.putExtra("status", "" + api_map.get("status"));
-                        startActivity(intent);
-                        finish();
+        if (App_Controller.isNetworkConnected(Quiz_screen.this))
+        {
+            App_Controller.Progressbar_Show(Quiz_screen.this);
+            APIInterface apiService = APIClient.getClient().create(APIInterface.class);
+            Call<Response_register> call = apiService.SubmitAnswer(api_map);
+            call.enqueue(new Callback<Response_register>() {
+                @Override
+                public void onResponse(Call<Response_register> call, Response<Response_register> response) {
+                    App_Controller.Progressbar_Dismiss();
+                    if (response.body() != null) {
+                        boolean status = response.body().getStatus();
+                        if (status) {
+       //                     Toast.makeText(Quiz_screen.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Quiz_screen.this, Result_Screen.class);
+                            intent.putExtra("total_right", "" + api_map.get("total_right"));
+                            intent.putExtra("chapter_name", "" + Chapt_name);
+                            intent.putExtra("total_question", "" + api_map.get("total_question"));
+                            intent.putExtra("total_attempts", "" + api_map.get("total_attempts"));
+                            intent.putExtra("percentage", "" + api_map.get("percentage"));
+                            intent.putExtra("status", "" + api_map.get("status"));
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(Quiz_screen.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
                     } else {
-                        Toast.makeText(Quiz_screen.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Quiz_screen.this, getResources().getString(R.string.toast_something_wentrong), Toast.LENGTH_SHORT).show();
                     }
-
-                } else {
-                    Toast.makeText(Quiz_screen.this, getResources().getString(R.string.toast_please_retry), Toast.LENGTH_SHORT).show();
                 }
-            }
 
-            @Override
-            public void onFailure(Call<Response_register> call, Throwable t) {
-                App_Controller.Progressbar_Dismiss();
-            }
-        });
+                @Override
+                public void onFailure(Call<Response_register> call, Throwable t) {
+                    App_Controller.Progressbar_Dismiss();
+                }
+            });
+        }else{
+            Toast.makeText(this, getResources().getString(R.string.toast_no_internet), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
