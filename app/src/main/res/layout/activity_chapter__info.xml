@@ -6,36 +6,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.Chapter_Info">
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:id="@+id/txt_desc"
-        android:textColor="@android:color/black"
-        android:fontFamily="monospace"
-        android:layout_margin="22sp"
-        android:textSize="22sp"
-        android:gravity="center"
-        android:text="These are very important and latest GK Questions and general awareness 2019 questions for all competitive exams"
-        android:layout_height="wrap_content"></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/txt_ques_size"
-        android:textColor="@android:color/black"
-        android:fontFamily="monospace"
-        android:layout_margin="22sp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Questions: 20"
-        android:layout_height="wrap_content"></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/txt_time"
-        android:textColor="@android:color/black"
-        android:fontFamily="monospace"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="22sp"
-        android:text="Timing: 30 minuts"
-        android:layout_height="wrap_content"></TextView>
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_margin="22sp"
+                app:cardElevation="11dp"
+                app:cardCornerRadius="11dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/txt_desc"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/amiri"
+                    android:layout_margin="22sp"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:text="These are very important and latest GK Questions and general awareness 2019 questions for all competitive exams"
+                    android:layout_height="wrap_content"></TextView>
+            </android.support.design.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/txt_ques_size"
+                android:textColor="@android:color/black"
+                android:layout_margin="22sp"
+                android:fontFamily="@font/amiri"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Questions: 20"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/txt_time"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/amiri"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="22sp"
+                android:text="Timing: 30 minuts"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+    </ScrollView>
     <TextView
         android:layout_width="match_parent"
         android:text="START"
@@ -48,5 +68,4 @@
         android:padding="7dp"
         android:background="@drawable/button_background"
         android:layout_height="wrap_content"></TextView>
-
 </LinearLayout>

@@ -56,5 +56,6 @@ public class Chapter_Info extends AppCompatActivity {
                 putExtra("chapter_id",Chapt_ID).
                 putExtra("name",Chapt_name).
                 putExtra("timer",App_Utils.Chapter_List_Info.get(item_position).getTiming()));
+        finish();
     }
 }
