@@ -62,7 +62,7 @@ public class Home_Quiz extends AppCompatActivity {
                 App_Controller.Progressbar_Show(Home_Quiz.this);
 
                 APIInterface apiService = APIClient.getClient().create(APIInterface.class);
-                Call<Response_Chapter_list> call = apiService.getChapter();
+                Call<Response_Chapter_list> call = apiService.getSubject();
                 call.enqueue(new Callback<Response_Chapter_list>() {
                     @Override
                     public void onResponse(Call<Response_Chapter_list> call, Response<Response_Chapter_list> response) {
@@ -77,10 +77,7 @@ public class Home_Quiz extends AppCompatActivity {
                                 for (int i=0;i<response.body().getResponce().size();i++)
                                 {
                                     Chapter_List_Info.add(new Cons_quiz_home(response.body().getResponce().get(i).getId(),
-                                            response.body().getResponce().get(i).getName(),
-                                            response.body().getResponce().get(i).getDescription(),
-                                            response.body().getResponce().get(i).getNo_of_question(),
-                                            response.body().getResponce().get(i).gettiming()));
+                                            response.body().getResponce().get(i).getName()));
                                 }
 
                                 Adapter_home_quiz adapter = new Adapter_home_quiz(Chapter_List_Info,Home_Quiz.this);

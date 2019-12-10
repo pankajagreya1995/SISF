@@ -11,41 +11,42 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sisf.Activity.Chapter_Info;
-import com.sisf.Activity.Chapter_list;
-import com.sisf.Activity.Quiz_screen;
 import com.sisf.Pojo.Cons_quiz_home;
 import com.sisf.R;
 
 import java.util.List;
 
-public class Adapter_home_quiz extends RecyclerView.Adapter<Adapter_home_quiz.ViewHolder> {
+public class Adapter_Chapter_list extends RecyclerView.Adapter<Adapter_home_quiz.ViewHolder> {
     private List<Cons_quiz_home> list_chapter;
     private Context context;
 
-    public Adapter_home_quiz(List<Cons_quiz_home> list_chapter, Context context) {
+    public Adapter_Chapter_list(List<Cons_quiz_home> list_chapter, Context context) {
         this.list_chapter = list_chapter;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public Adapter_home_quiz.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater=LayoutInflater.from(viewGroup.getContext());
         View v=layoutInflater.inflate(R.layout.layout_adapter_quiz_home,viewGroup,false);
-        Adapter_home_quiz.ViewHolder viewHolder=new ViewHolder(v);
+        Adapter_home_quiz.ViewHolder viewHolder=new Adapter_home_quiz.ViewHolder(v);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull Adapter_home_quiz.ViewHolder viewHolder, final int i) {
 
         viewHolder.ed_name.setText(list_chapter.get(i).getName());
         viewHolder.main_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context, Chapter_list.class).
-                        putExtra("subject_id",list_chapter.get(i).getId()).
-                        putExtra("subject_name",list_chapter.get(i).getName()));
+                context.startActivity(new Intent(context, Chapter_Info.class).
+                        putExtra("item_position",i).
+                        putExtra("subject_id",list_chapter.get(i).getSubject_id()).
+                        putExtra("position",list_chapter.get(i).getId()).
+                        putExtra("subject_name",list_chapter.get(i).getSubject_name()).
+                        putExtra("name",list_chapter.get(i).getName()));
             }
         });
     }
@@ -64,5 +65,6 @@ public class Adapter_home_quiz extends RecyclerView.Adapter<Adapter_home_quiz.Vi
             ed_name=itemView.findViewById(R.id.txt_name);
         }
     }
+
 
 }

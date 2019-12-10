@@ -23,7 +23,7 @@ public class Chapter_Info extends AppCompatActivity {
 
     @BindView(R.id.txt_time)
     TextView ed_timer;
-    String Chapt_ID,Chapt_name;
+    String Chapt_ID,Chapt_name,subject_id,subject_name;
     int item_position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,11 @@ public class Chapter_Info extends AppCompatActivity {
         Chapt_ID=getIntent().getExtras().getString("position");
         Chapt_name=getIntent().getExtras().getString("name");
         item_position=getIntent().getExtras().getInt("item_position");
+        subject_id=getIntent().getExtras().getString("subject_id");
+        subject_name=getIntent().getExtras().getString("subject_name");
+
         getSupportActionBar().setTitle(Chapt_name);
+        getSupportActionBar().setSubtitle(subject_name);
         ed_desc.setText(App_Utils.Chapter_List_Info.get(item_position).getDescription());
         ed_question_size.setText("Total no of questions: "+App_Utils.Chapter_List_Info.get(item_position).getNo_of_question());
         ed_timer.setText("Time: "+App_Utils.Chapter_List_Info.get(item_position).getTiming());
@@ -54,6 +58,8 @@ public class Chapter_Info extends AppCompatActivity {
         startActivity(new Intent(Chapter_Info.this, Quiz_screen.class).
                 putExtra("item_position",item_position).
                 putExtra("chapter_id",Chapt_ID).
+                putExtra("subject_id",subject_id).
+                putExtra("subject_name",subject_name).
                 putExtra("name",Chapt_name).
                 putExtra("timer",App_Utils.Chapter_List_Info.get(item_position).getTiming()));
         finish();

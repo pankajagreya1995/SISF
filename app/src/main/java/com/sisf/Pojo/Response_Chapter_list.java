@@ -23,11 +23,30 @@ public class Response_Chapter_list {
         @SerializedName("description")
         public String description;
 
+        @SerializedName("subject_id")
+        public String subject_id;
+
         @SerializedName("timing")
         public String timing;
 
         @SerializedName("no_of_question")
         public String no_of_question;
+
+        public String getSubject_id() {
+            return subject_id;
+        }
+
+        public void setSubject_id(String subject_id) {
+            this.subject_id = subject_id;
+        }
+
+        public String getTiming() {
+            return timing;
+        }
+
+        public void setTiming(String timing) {
+            this.timing = timing;
+        }
 
         public String getId() {
             return id;

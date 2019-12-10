@@ -64,7 +64,7 @@ public class Quiz_screen extends AppCompatActivity {
     int Current_Question = 0;
     String TAG = "Quiz_screen";
 
-    String Chapt_ID, Chapt_name, Chapt_timer;
+    String Chapt_ID, Chapt_name, Chapt_timer,subject_id,subject_name;
     int Chapter_position;
     //Save All selected options Answer
     List<Cons_submit_ans> Answer_List = new ArrayList<>();
@@ -75,12 +75,16 @@ public class Quiz_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_screen);
         ButterKnife.bind(this);
+
+        subject_name=getIntent().getExtras().getString("subject_name");
+        subject_id = getIntent().getExtras().getString("subject_id");
         Chapt_ID = getIntent().getExtras().getString("chapter_id");
         Chapt_name = getIntent().getExtras().getString("name");
         Chapt_timer = getIntent().getExtras().getString("timer");
         Chapter_position = getIntent().getExtras().getInt("position");
 
         getSupportActionBar().setTitle(Chapt_name);
+        getSupportActionBar().setSubtitle(subject_name);
         Call_Question_Api(Chapt_ID);
 
         long milisec_time = getMilliFromDate(Chapt_timer);
@@ -315,7 +319,7 @@ public class Quiz_screen extends AppCompatActivity {
         api_map.put("total_attempts", "" + Total_attemp);
         api_map.put("percentage", "" + per);
         api_map.put("status", "");
-
+        api_map.put("subject_id", "" + subject_id);
         Log.i(TAG, "ShowResult__   " + api_map);
         Call_Submit_Result_Api(api_map);
     }
@@ -341,6 +345,7 @@ public class Quiz_screen extends AppCompatActivity {
                             intent.putExtra("total_question", "" + api_map.get("total_question"));
                             intent.putExtra("total_attempts", "" + api_map.get("total_attempts"));
                             intent.putExtra("percentage", "" + api_map.get("percentage"));
+                            intent.putExtra("subject_name", "" + subject_name);
                             intent.putExtra("status", "" + api_map.get("status"));
                             startActivity(intent);
                             finish();

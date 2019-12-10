@@ -54,6 +54,9 @@ public class Result_Screen extends AppCompatActivity {
             String chapter_name=getIntent().getExtras().getString("chapter_name");
             ed_result_name.setText(chapter_name);
 
+            String subject_name=getIntent().getExtras().getString("subject_name");
+            getSupportActionBar().setSubtitle(subject_name);
+
             String total_question=getIntent().getExtras().getString("total_question");
             ed_result_total_que.setText("Total Questions: "+total_question+" Que.");
 
@@ -62,9 +65,8 @@ public class Result_Screen extends AppCompatActivity {
 
             percentage=getIntent().getExtras().getString("percentage");
             ed_result_per.setText(percentage+"%");
-
-        }catch (Exception e){e.printStackTrace();}
-
+           }
+        catch (Exception e){e.printStackTrace();}
 
         Resources res = getResources();
         Drawable drawable = res.getDrawable(R.drawable.circular);

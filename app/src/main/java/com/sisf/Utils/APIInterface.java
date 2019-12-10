@@ -7,6 +7,7 @@ import com.sisf.Pojo.Response_login;
 import com.sisf.Pojo.Response_register;
 
 import java.util.HashMap;
+import java.util.Queue;
 
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
@@ -38,8 +39,11 @@ public interface APIInterface {
     @POST("app/api/login")
     Call<Response_login> login(@FieldMap HashMap<String, String> data);
 
+    @GET("app/api/subjectList")
+    Call<Response_Chapter_list> getSubject();
+
     @GET("app/api/chapterList")
-    Call<Response_Chapter_list> getChapter();
+    Call<Response_Chapter_list> getChapter(@Query("subject_id") String subject_id);
 
     @GET("app/api/questionList?")
     Call<Response_Question> getQuestions(@Query("chapter_id") String chapter_id);
