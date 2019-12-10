@@ -17,7 +17,7 @@
         android:textStyle="bold"
         android:layout_marginRight="11dp"
         android:textColor="@android:color/holo_blue_light"
-        android:text="Chapter Name"
+        android:hint="Chapter Name"
         android:layout_height="wrap_content"></TextView>
     <RelativeLayout
         android:layout_width="250dp"
@@ -76,7 +76,7 @@
                 android:id="@+id/result_right_que"
                 android:layout_marginRight="11dp"
                 android:textColor="@android:color/black"
-                android:text="Total Right Question:20"
+                android:hint="Total Right Question:0"
                 android:layout_height="wrap_content"></TextView>
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_marginTop="11dp"
                 android:layout_marginRight="11dp"
                 android:textColor="@android:color/black"
-                android:text="Total Question:30"
+                android:hint="Total Question:0"
                 android:layout_height="wrap_content"></TextView>
             <TextView
                 android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                 android:layout_marginTop="11dp"
                 android:layout_marginRight="11dp"
                 android:textColor="@android:color/black"
-                android:text="Total Attemp:30"
+                android:hint="Total Attemp:0"
                 android:layout_height="wrap_content"></TextView>
         </LinearLayout>
     </android.support.design.card.MaterialCardView>

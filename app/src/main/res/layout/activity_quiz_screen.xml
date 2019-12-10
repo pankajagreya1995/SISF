@@ -20,7 +20,7 @@
             android:paddingLeft="22sp"
             android:layout_marginTop="11dp"
             android:textColor="@android:color/black"
-            android:text="Question: 12/20"
+            android:hint="Question:"
             android:layout_height="wrap_content"></TextView>
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
             android:id="@+id/txt_timer"
             android:layout_marginRight="11dp"
             android:textColor="@android:color/black"
-            android:text="Timer: 60/2000"
+            android:hint="Timer:"
             android:layout_height="wrap_content"></TextView>
 
     </LinearLayout>
@@ -46,7 +46,6 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@android:color/black"
-        android:text="Which of the below is valid way to instantiate an array in java?"
         android:layout_height="wrap_content"></TextView>
 
     <ListView

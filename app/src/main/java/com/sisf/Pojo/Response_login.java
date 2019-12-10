@@ -9,6 +9,12 @@ public class Response_login {
     @SerializedName("message")
     public String message;
 
+    @SerializedName("response_code")
+    public Integer response_code;
+
+    @SerializedName("responce_id")
+    public String responce_id;
+
     @SerializedName("response")
     public Resp_login response;
 
@@ -111,6 +117,22 @@ public class Response_login {
         public void setCreated_on(String created_on) {
             this.created_on = created_on;
         }
+    }
+
+    public String getResponce_id() {
+        return responce_id;
+    }
+
+    public void setResponce_id(String responce_id) {
+        this.responce_id = responce_id;
+    }
+
+    public Integer getResponse_code() {
+        return response_code;
+    }
+
+    public void setResponse_code(Integer response_code) {
+        this.response_code = response_code;
     }
 
     public Boolean getStatus() {

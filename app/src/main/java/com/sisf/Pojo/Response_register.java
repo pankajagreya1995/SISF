@@ -10,6 +10,17 @@ public class Response_register {
     @SerializedName("message")
     public String message;
 
+    @SerializedName("Responce")
+    public String Responce;
+
+    public String getResponce() {
+        return Responce;
+    }
+
+    public void setResponce(String responce) {
+        Responce = responce;
+    }
+
     public Boolean getStatus() {
         return status;
     }
