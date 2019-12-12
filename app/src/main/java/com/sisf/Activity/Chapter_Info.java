@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class Chapter_Info extends AppCompatActivity {
         setContentView(R.layout.activity_chapter__info);
         ButterKnife.bind(this);
 
+
         //  title.setText("hiii");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -43,8 +45,8 @@ public class Chapter_Info extends AppCompatActivity {
         getSupportActionBar().setTitle(Chapt_name);
         getSupportActionBar().setSubtitle(subject_name);
         ed_desc.setText(App_Utils.Chapter_List_Info.get(item_position).getDescription());
-        ed_question_size.setText("Total no of questions: "+App_Utils.Chapter_List_Info.get(item_position).getNo_of_question());
-        ed_timer.setText("Time: "+App_Utils.Chapter_List_Info.get(item_position).getTiming());
+        ed_question_size.setText(App_Utils.Chapter_List_Info.get(item_position).getNo_of_question());
+        ed_timer.setText(App_Utils.Chapter_List_Info.get(item_position).getTiming());
 
     }
 

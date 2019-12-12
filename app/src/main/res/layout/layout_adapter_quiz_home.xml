@@ -24,6 +24,7 @@
                 android:fontFamily="serif"
                 android:layout_marginLeft="22dp"
                 android:id="@+id/txt_name"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="Chapter one Quiz"
                 android:textSize="20sp"
                 android:textStyle="bold"></TextView>

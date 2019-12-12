@@ -39,4 +39,6 @@
 
     <!--when any error on response get time-->
     <string name="toast_something_wentrong">Something went wrong...</string>
+
+    <string name="register_txt"><u> Register</u></string>
 </resources>

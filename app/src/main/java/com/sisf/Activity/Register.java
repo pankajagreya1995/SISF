@@ -6,7 +6,9 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -86,7 +88,8 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -155,14 +158,14 @@ public class Register extends AppCompatActivity {
                 }
 
                 App_Controller.Progressbar_Show(Register.this);
-
+                String getclass= String.valueOf(spinner_class.getSelectedItemPosition()+1);
                 HashMap<String, String> map = new HashMap<>();
                 map.put("name", ed_name.getText().toString().trim());
                 map.put("gender", Gender);
                 map.put("submitted_from", "mobile");
                 map.put("course_type", spinner.getSelectedItem().toString());
                 map.put("password", ed_pass.getText().toString().trim());
-                map.put("class", spinner_class.getSelectedItem().toString());
+                map.put("class", getclass);
                 map.put("school", ed_school.getText().toString().trim());
                 map.put("mobile", ed_mobile.getText().toString().trim());
                 map.put("age", ed_age.getText().toString().trim());
@@ -220,7 +223,8 @@ public class Register extends AppCompatActivity {
     private void Show_Otp_dialog(final String getid) {
 
         View dialogView = getLayoutInflater().inflate(R.layout.layout_regi_otp, null);
-        dialog = new BottomSheetDialog(this);
+        dialog = new BottomSheetDialog(this,R.style.AppBottomSheetDialogTheme);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(dialogView);
         dialog.setCancelable(false);
         final TextView btn_submit = dialogView.findViewById(R.id.submit_button);

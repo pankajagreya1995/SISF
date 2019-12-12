@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,11 +48,15 @@ public class Forgot_pwd extends AppCompatActivity {
     BottomSheetDialog dialog;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_pwd);
         ButterKnife.bind(this);
+
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -116,9 +123,11 @@ public class Forgot_pwd extends AppCompatActivity {
     private void Show_Otp_Dialog(final String otp, final String id,final String msg) {
 
             View dialogView = getLayoutInflater().inflate(R.layout.layout_otp, null);
-            dialog = new BottomSheetDialog(this);
+            dialog = new BottomSheetDialog(this,R.style.AppBottomSheetDialogTheme);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(dialogView);
             dialog.setCancelable(false);
+
             final TextView btn_submit=dialogView.findViewById(R.id.submit_button);
 
             otp_txt_layout =dialogView.findViewById(R.id.mobilel);

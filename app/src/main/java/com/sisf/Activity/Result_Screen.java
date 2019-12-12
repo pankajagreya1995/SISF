@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -44,13 +45,13 @@ public class Result_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result__screen);
         ButterKnife.bind(this);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
         getSupportActionBar().setTitle("Show Result");
 
         try{
             String total_right=getIntent().getExtras().getString("total_right");
-            ed_result_right_que.setText("Total Right Questions: "+total_right+" Que.");
+            ed_result_right_que.setText(total_right+" Que.");
             String chapter_name=getIntent().getExtras().getString("chapter_name");
             ed_result_name.setText(chapter_name);
 
@@ -58,10 +59,10 @@ public class Result_Screen extends AppCompatActivity {
             getSupportActionBar().setSubtitle(subject_name);
 
             String total_question=getIntent().getExtras().getString("total_question");
-            ed_result_total_que.setText("Total Questions: "+total_question+" Que.");
+            ed_result_total_que.setText(total_question+" Que.");
 
             String total_attempts=getIntent().getExtras().getString("total_attempts");
-            ed_total_attemp.setText("Total Attempted Questions: "+total_attempts+" Que.");
+            ed_total_attemp.setText(total_attempts+" Que.");
 
             percentage=getIntent().getExtras().getString("percentage");
             ed_result_per.setText(percentage+"%");
@@ -112,9 +113,8 @@ public class Result_Screen extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
+
+    public void btn_finish(View view) {
+        finish();
     }
 }

@@ -18,7 +18,7 @@
             android:orientation="vertical" >
             <android.support.design.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_margin="22sp"
+                android:layout_margin="11dp"
                 app:cardElevation="11dp"
                 app:cardCornerRadius="11dp"
                 android:layout_height="wrap_content">
@@ -33,41 +33,73 @@
                     android:text=""
                     android:layout_height="wrap_content"></TextView>
             </android.support.design.card.MaterialCardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="22dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/amiri"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:text="Total no of Questions: "
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txt_ques_size"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/amiri"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:text=""
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/amiri"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Time: "
+                    android:textSize="25sp"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/txt_time"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/amiri"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:id="@+id/txt_ques_size"
-                android:textColor="@android:color/black"
-                android:layout_margin="22sp"
-                android:fontFamily="@font/amiri"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="25sp"
-                android:text=""
-                android:layout_height="wrap_content"></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:id="@+id/txt_time"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/amiri"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_margin="22sp"
-                android:text=""
-                android:textSize="25sp"
-                android:layout_height="wrap_content"></TextView>
         </LinearLayout>
     </ScrollView>
     <TextView
         android:layout_width="match_parent"
         android:text="START"
-        android:fontFamily="monospace"
+        android:fontFamily="serif-monospace"
         android:gravity="center"
         android:textSize="22sp"
+        android:textColor="@android:color/white"
         android:onClick="Quiz_start"
         android:textStyle="bold"
         android:layout_margin="22sp"
-        android:padding="7dp"
+        android:padding="15dp"
         android:background="@drawable/button_background"
         android:layout_height="wrap_content"></TextView>
 </LinearLayout>

@@ -8,12 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_margin="22dp"
+        android:padding="22dp"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="match_parent"
             android:src="@drawable/app_logo"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="44dp"
             android:layout_height="111dp"></ImageView>
 
         <android.support.design.widget.TextInputLayout
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number|none"
-                android:maxLength="10"
+                android:maxLength="4"
                 android:id="@+id/mobile"
                 app:counterEnabled="true"
                 android:layout_gravity="bottom"

@@ -7,9 +7,11 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +54,9 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -153,7 +158,7 @@ public class Login extends AppCompatActivity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
@@ -163,13 +168,13 @@ public class Login extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login_menu, menu);
         return true;
-    }
+    }*/
 
     public void hide_keybord(View view) {
         App_Controller.Hide_keyboard(view, Login.this);
@@ -178,7 +183,8 @@ public class Login extends AppCompatActivity {
     private void Show_Otp_dialog(final String getid) {
 
         View dialogView = getLayoutInflater().inflate(R.layout.layout_regi_otp, null);
-        dialog = new BottomSheetDialog(this);
+        dialog = new BottomSheetDialog(this,R.style.AppBottomSheetDialogTheme);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(dialogView);
         dialog.setCancelable(false);
         final TextView btn_submit = dialogView.findViewById(R.id.submit_button);
@@ -259,4 +265,7 @@ public class Login extends AppCompatActivity {
         return true;
     }
 
+    public void register_button(View view) {
+        startActivity(new Intent(Login.this,Register.class));
+    }
 }

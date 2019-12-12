@@ -16,7 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:layout_width="match_parent"
+                android:text="SISF Education"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:layout_marginRight="55dp"
+                android:gravity="center"
+                android:layout_height="match_parent"></TextView>
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

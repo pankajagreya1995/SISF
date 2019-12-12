@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number|none"
-                android:maxLength="10"
+                android:maxLength="4"
                 android:id="@+id/mobile"
                 app:counterEnabled="true"
                 android:layout_gravity="bottom"

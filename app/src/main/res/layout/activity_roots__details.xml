@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.Roots_Details">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:id="@+id/title"
+                android:textStyle="bold"
+                android:layout_marginRight="55dp"
+                android:gravity="center"
+                android:layout_height="match_parent"></TextView>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,14 +66,14 @@
                         android:id="@+id/txt_title"
                         android:textStyle="bold"
                         android:text="Qualifications:"
-                        android:textColor="@android:color/holo_blue_light"
+                        android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="sans-serif"
                         android:textSize="18sp"></TextView>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="11dp"
-                        android:textColor="@android:color/holo_blue_light"
+                        android:textColor="@color/colorPrimaryDark"
                         android:id="@+id/txt_title_desc"
                         android:text="Company Secretary, Masters of Business Administration (Finance), Masters of Commerce, Certified Management Accountant."
                         android:fontFamily="sans-serif"

@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -92,7 +93,7 @@ public class Quiz_screen extends AppCompatActivity {
         new CountDownTimer(milisec_time, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
-                ed_timer.setText("Timer: " + String.format("%d h:%d min: %d sec",
+                ed_timer.setText(String.format("%dh :%dmin :%dsec",
                         TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
@@ -178,7 +179,7 @@ public class Quiz_screen extends AppCompatActivity {
         list_options.setAdapter(new ArrayAdapter<String>(this, R.layout.layout_option, list));
 
         int curr_que = current_question + 1;
-        txt_current_que.setText("Question: " + curr_que + "/" + Questions_list.size());
+        txt_current_que.setText(curr_que + "/" + Questions_list.size());
 
 
         list_options.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -247,12 +248,12 @@ public class Quiz_screen extends AppCompatActivity {
         //if current page is last page so set next button on submit text
         if (curr_que == 1) {
             btn_prev.setVisibility(View.GONE);
-            btn_next.setText("Next");
+            btn_next.setText("NEXT");
         } else if (curr_que == Questions_list.size()) {
-            btn_next.setText("Submit");
+            btn_next.setText("SUBMIT");
             btn_prev.setVisibility(View.VISIBLE);
         } else {
-            btn_next.setText("Next");
+            btn_next.setText("NEXT");
             btn_prev.setVisibility(View.VISIBLE);
         }
 
@@ -283,7 +284,6 @@ public class Quiz_screen extends AppCompatActivity {
     public void button_next(View view) {
         int Check_last = Current_Question + 1;
         if (Check_last == Questions_list.size()) {
-
             Show_Result();
             // Call_Submit_Result_Api();
         } else {
@@ -297,17 +297,19 @@ public class Quiz_screen extends AppCompatActivity {
 
         int Right_Answer = 0;
 
-        HashMap<String, String> api_map = new HashMap<>();
+        HashMap<String, String> api_map_answer = new HashMap<>();
         for (int x = 0; x < Answer_List.size(); x++) {
             Cons_submit_ans cons_submit_ans = new Cons_submit_ans();
             cons_submit_ans = Answer_List.get(x);
-            api_map.put("question_id[" + x + "]", String.valueOf(cons_submit_ans.getQuest_ID()));
-            api_map.put("question_row_id[" + x + "]", String.valueOf(cons_submit_ans.getSelect_Ans()));
+            api_map_answer.put("question_id[" + x + "]", String.valueOf(cons_submit_ans.getQuest_ID()));
+            api_map_answer.put("question_row_id[" + x + "]", String.valueOf(cons_submit_ans.getSelect_Ans()));
             if (cons_submit_ans.isRight_Ans()) {
                 Right_Answer = Right_Answer + 1;
             }
         }
 
+
+        HashMap<String, String> api_map = new HashMap<>();
         long per = ((Right_Answer * 100) / Questions_list.size());
         int Total_attemp = Answer_List.size();
         int Total_question = Questions_list.size();
@@ -320,6 +322,10 @@ public class Quiz_screen extends AppCompatActivity {
         api_map.put("percentage", "" + per);
         api_map.put("status", "");
         api_map.put("subject_id", "" + subject_id);
+
+        api_map.putAll(api_map_answer);
+        Log.i(TAG, "ShowResult__   " + api_map_answer);
+        Log.i(TAG, "ShowResult__  --------------------------------------------------------------------------------------------");
         Log.i(TAG, "ShowResult__   " + api_map);
         Call_Submit_Result_Api(api_map);
     }
@@ -361,12 +367,12 @@ public class Quiz_screen extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Response_register> call, Throwable t) {
                     App_Controller.Progressbar_Dismiss();
+                    Toast.makeText(Quiz_screen.this, getResources().getString(R.string.toast_please_retry), Toast.LENGTH_SHORT).show();
                 }
             });
         }else{
             Toast.makeText(this, getResources().getString(R.string.toast_no_internet), Toast.LENGTH_SHORT).show();
         }
-
     }
 
 

@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sisf.Adapter.Adapter_Chapter_list;
@@ -34,16 +36,18 @@ public class Chapter_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_list);
-
         ButterKnife.bind(this);
+
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-
        String Subject_id=getIntent().getExtras().getString("subject_id");
        Subject_name=getIntent().getExtras().getString("subject_name");
-       getSupportActionBar().setTitle(Subject_name);
-
+     //  getSupportActionBar().setTitle(Subject_name);
+        TextView title=findViewById(R.id.txttitle);
+        title.setText(Subject_name);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),1);
         recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         recyclerView.setHasFixedSize(true);

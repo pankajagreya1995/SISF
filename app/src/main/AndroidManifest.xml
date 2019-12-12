@@ -20,21 +20,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Chapter_list"></activity>
-        <activity android:name=".Activity.Chapter_Info" />
+        <activity android:name=".Activity.Chapter_list"
+            android:theme="@style/AppTheme_noactionbar"></activity>
+        <activity android:name=".Activity.Chapter_Info"   />
         <activity android:name=".Activity.Result_Screen" />
         <activity android:name=".Activity.Quiz_screen" />
         <activity
             android:name=".Activity.Home_Quiz"
+            android:theme="@style/AppTheme_noactionbar"
             android:label="Quiz" />
         <activity
             android:name=".Activity.Forgot_pwd"
+            android:theme="@style/AppTheme_noactionbar"
             android:label="Forgot Password" />
         <activity
             android:name=".Activity.Login"
+            android:theme="@style/AppTheme_noactionbar"
             android:label="Login" />
         <activity
             android:name=".Activity.Register"
+            android:theme="@style/AppTheme_noactionbar"
             android:label="Register" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -54,19 +59,19 @@
         <activity
             android:name=".Activity.map"
             android:label="@string/title_activity_map" />
-        <activity android:name=".Activity.Story" />
-        <activity android:name=".Activity.Roots_Details" />
+        <activity android:name=".Activity.Story"  android:theme="@style/AppTheme_noactionbar"/>
+        <activity android:name=".Activity.Roots_Details"  android:theme="@style/AppTheme_noactionbar"/>
         <activity
-            android:name=".Activity.FAQ"
+            android:name=".Activity.FAQ" android:theme="@style/AppTheme_noactionbar"
             android:label="FAQ" />
         <activity
-            android:name=".Activity.Roots"
+            android:name=".Activity.Roots" android:theme="@style/AppTheme_noactionbar"
             android:label="Roots" />
         <activity
-            android:name=".Activity.Course"
+            android:name=".Activity.Course"    android:theme="@style/AppTheme_noactionbar"
             android:label="Course" />
         <activity
-            android:name=".Activity.ContactUs"
+            android:name=".Activity.ContactUs" android:theme="@style/AppTheme_noactionbar"
             android:label="Contact Us" />
         <activity
             android:name=".Activity.Home"

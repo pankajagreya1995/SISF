@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -52,14 +53,6 @@ public class Home extends AppCompatActivity {
     private static int NUM_PAGES = 0;
     private static final Integer[] IMAGES = {R.drawable.slider_1,
             R.drawable.slider_2,
-            R.drawable.slider_3,
-            R.drawable.slider_1,
-            R.drawable.slider_2,
-            R.drawable.slider_3,R.drawable.slider_1,
-            R.drawable.slider_2,
-            R.drawable.slider_3,
-            R.drawable.slider_1,
-            R.drawable.slider_2,
             R.drawable.slider_3};
 
     boolean Select_course = false;
@@ -67,6 +60,7 @@ public class Home extends AppCompatActivity {
     Spinner spinner;
     TextView header_name;
     NavigationView navigationView;
+    TabLayout tabLayout;
     Timer swipeTimer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +70,10 @@ public class Home extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         //initilize all weidgets
         mPager = (ViewPager) findViewById(R.id.pager);
+        tabLayout = (TabLayout)findViewById(R.id.tab_indictor);
+        tabLayout.setupWithViewPager(mPager, true);
 
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -171,7 +166,8 @@ public class Home extends AppCompatActivity {
     private void Show_logout_Dialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(Home.this);
         dialog.setTitle("Alert!");
-        dialog.setMessage("Are you sure.you want to logout?");
+        dialog.setIcon(R.drawable.app_logo);
+        dialog.setMessage("Are you sure you want to logout?");
         dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

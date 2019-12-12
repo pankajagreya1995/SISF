@@ -4,9 +4,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.ContactUs">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:text="Contact Us"
+                            android:id="@+id/txt_title"
+                            android:fontFamily="serif"
+                            android:textStyle="bold"
+                            android:layout_marginRight="77dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"></TextView>
+                </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,22 +56,85 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
-                                        <TextView
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Address"
-                                            android:layout_margin="15dp"
-                                            android:textStyle="bold"
-                                            android:textColor="@android:color/black"
-                                            android:textSize="18sp"></TextView>
-                                        <TextView
+                                            android:layout_marginRight="11dp"
+                                            android:layout_marginLeft="11dp"
+                                            android:layout_marginTop="11dp"
+                                            android:layout_height="wrap_content">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Managing Director: "
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Shivin Nalwaya"
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                        </LinearLayout>
+                                        <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="15dp"
-                                            android:layout_marginRight="15dp"
-                                            android:layout_marginBottom="15dp"
-                                            android:id="@+id/txt_address"
-                                            android:textSize="16sp"></TextView>
+                                            android:layout_marginRight="11dp"
+                                            android:layout_marginLeft="11dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_height="wrap_content">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Contact No: "
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="+91 - 7567247499"
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_marginRight="11dp"
+                                            android:layout_marginLeft="11dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_height="wrap_content">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Email-ID: "
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="shivinnalawaya@gmail.com"
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_marginRight="11dp"
+                                            android:layout_marginLeft="11dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_height="wrap_content">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Address: "
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/txt_address"
+                                                    android:textColor="@android:color/black"
+                                                    android:textSize="16sp"></TextView>
+                                        </LinearLayout>
+
+
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_marginTop="11dp"
@@ -70,6 +157,7 @@
                                             android:layout_gravity="center"
                                             android:gravity="center"
                                             android:paddingTop="11dp"
+                                            android:fontFamily="serif-monospace"
                                             android:textColor="@android:color/black"
                                             android:textStyle="bold"
                                             android:textSize="18sp"></TextView>

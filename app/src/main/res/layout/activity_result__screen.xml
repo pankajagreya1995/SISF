@@ -8,15 +8,15 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Result_Screen">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:textSize="25sp"
         android:fontFamily="@font/amiri"
-        android:paddingLeft="22sp"
         android:layout_marginTop="11dp"
         android:id="@+id/result_name"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textStyle="bold"
-        android:layout_marginRight="11dp"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@color/colorPrimaryDark"
         android:hint="Chapter Name"
         android:layout_height="wrap_content"></TextView>
     <RelativeLayout
@@ -31,7 +31,7 @@
             android:layout_height="250dp"
             android:indeterminate="false"
             android:max="100"
-            android:progress="50"
+            android:progress="30"
             android:layout_centerInParent="true"
             android:progressDrawable="@drawable/circular"
             android:secondaryProgress="100"
@@ -41,11 +41,10 @@
             android:id="@+id/result_per"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="11dp"
-            android:layout_marginRight="11dp"
             android:fontFamily="serif"
             android:foregroundGravity="center"
             android:gravity="center"
+            android:layout_marginRight="15dp"
             android:paddingLeft="22sp"
             android:text="100%"
             android:textColor="@android:color/black"
@@ -57,8 +56,9 @@
 
     <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_margin="33dp"
-        android:elevation="22sp"
+        android:layout_margin="22dp"
+        android:elevation="22dp"
+        app:cardCornerRadius="22dp"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,43 +67,99 @@
             android:gravity="center"
             android:padding="11dp"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:textSize="16sp"
-                android:fontFamily="@font/amiri"
-                android:paddingLeft="22sp"
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="11dp"
-                android:id="@+id/result_right_que"
-                android:layout_marginRight="11dp"
-                android:textColor="@android:color/black"
-                android:hint="Total Right Question:0"
-                android:layout_height="wrap_content"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:textSize="16sp"
-                android:fontFamily="@font/amiri"
-                android:paddingLeft="22sp"
-                android:id="@+id/result_total_que"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/amiri"
+                    android:paddingLeft="22sp"
+                    android:textColor="@android:color/black"
+                    android:text="Total Question: "
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/amiri"
+                    android:textStyle="bold"
+                    android:id="@+id/result_total_que"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="11dp"
-                android:layout_marginRight="11dp"
-                android:textColor="@android:color/black"
-                android:hint="Total Question:0"
-                android:layout_height="wrap_content"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:textSize="16sp"
-                android:fontFamily="@font/amiri"
-                android:paddingLeft="22sp"
-                android:id="@+id/total_attemp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/amiri"
+                    android:paddingLeft="22sp"
+                    android:textColor="@android:color/black"
+                    android:text="Total Right Question: "
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/amiri"
+                    android:id="@+id/result_right_que"
+                    android:textStyle="bold"
+                    android:layout_marginRight="11dp"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="11dp"
-                android:layout_marginRight="11dp"
-                android:textColor="@android:color/black"
-                android:hint="Total Attemp:0"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/amiri"
+                    android:paddingLeft="22sp"
+                    android:textColor="@android:color/black"
+                    android:text="Total Attemp: "
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/amiri"
+                    android:textStyle="bold"
+                    android:id="@+id/total_attemp"
+                    android:textColor="@android:color/black"
+
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
         </LinearLayout>
     </android.support.design.card.MaterialCardView>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:text="FINISH"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="@android:color/white"
+        android:onClick="btn_finish"
+        android:textStyle="bold"
+        android:layout_margin="22sp"
+        android:padding="15dp"
+        android:background="@drawable/button_background"
+        android:layout_height="wrap_content"></TextView>
 
 
 
